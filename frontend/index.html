@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Career EDAI — Home</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+  * {
+    font-family: 'Poppins', sans-serif !important;
+    .toast-container {
+    z-index: 20000;  /* Above modal */
+}
+  }
+</style>
+
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+
+  <!-- ⭐ NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold " href="#" style="font-size: 1.8rem">Edu<span class="text-primary">Guide</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html" id="home-link">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pathfinder.html" id="assessment-link">Path Finder</a></li>
+
+          <li class="nav-item ms-3 d-flex align-items-center">
+
+  <!-- BEFORE LOGIN -->
+  <button id="loginBtn" class="btn btn-outline-primary me-2">Login</button>
+  <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+
+  <!-- AFTER LOGIN — PROFILE DROPDOWN (NEW) -->
+  <div class="dropdown d-none" id="profileDropdown">
+    <button class="btn p-0 border-0 bg-transparent" data-bs-toggle="dropdown" id="profileBtn">
+      <img id="profileIcon" 
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        width="38" height="38"
+        class="rounded-circle border">
+      <span id="profileInitial" class="d-none rounded-circle border profile-initial"></span>
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-end shadow-sm profile-menu">
+      <li class="px-3 pt-2 pb-1">
+        <div class="fw-bold" id="dropdownName"></div>
+        <div class="text-muted small" id="dropdownEmail"></div>
+      </li>
+
+      <li><hr class="dropdown-divider my-2"></li>
+
+      <li>
+        <a class="dropdown-item profile-item" href="fullinfo.html">
+          <i class="bi bi-person-lines-fill me-2"></i> Full Profile
+        </a>
+      </li>
+
+      <li>
+        <a class="dropdown-item profile-item text-danger" id="logoutBtn">
+          <i class="bi bi-box-arrow-right me-2"></i> Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</li>
+
+
+            <!-- After login — hidden initially -->
+            <span id="userEmailText" class="fw-bold text-primary d-none ms-3"></span>
+            <button id="logoutBtn" class="btn btn-danger d-none ms-2">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- ⭐ HERO SECTION -->
+<header class="hero-section py-5" style="background: #f8fbff;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-3">
+          Your Future. <br>
+          <span class="text-primary">Your Career.</span> Guided by AI.
+        </h1>
+
+        <p class="lead text-muted mb-4">
+          EduGuide analyzes your skills, interests & education to match you with careers you'll actually enjoy.
+        </p>
+
+        <a id="askPathBtn" href="pathfinder.html" class="btn btn-primary btn-lg px-4 me-3">
+          Explore Career Paths
+        </a>
+
+        <button class="btn btn-outline-secondary btn-lg"
+        id="fullProfileBtn"
+        data-bs-toggle="modal"
+        data-bs-target="#authModal">
+    Full Profile
+</button>
+
+      </div>
+
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="generated-image.png" class="img-fluid rounded-4" alt="">
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ⭐ HOW IT WORKS -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">How EduGuide Helps You</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="p-4 shadow-sm rounded-4 bg-white h-100">
+          <div class="display-6 text-primary mb-3">
+            <i class="bi bi-bar-chart-fill"></i>
+          </div>
+          <h5 class="fw-semibold">Smart Profiling</h5>
+          <p class="text-muted">
+            Tell us about your education, skills and strengths to build your career profile.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 shadow-sm rounded-4 bg-white h-100">
+          <div class="display-6 text-primary mb-3">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <h5 class="fw-semibold">AI Career Matching</h5>
+          <p class="text-muted">
+            Our ML engine (coming soon) will find the most suitable career paths for you.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 shadow-sm rounded-4 bg-white h-100">
+          <div class="display-6 text-primary mb-3">
+            <i class="bi bi-journal-bookmark-fill"></i>
+          </div>
+          <h5 class="fw-semibold">Track Your Journey</h5>
+          <p class="text-muted">
+            Save results, compare paths and plan your skills for the future.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⭐ WHY EDUGUIDE -->
+<section class="py-5" style="background:#f5f9ff;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6">
+        <img src="generated-image1.png" class="img-fluid rounded-4" />
+      </div>
+
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-3">Why Students Love EduGuide</h2>
+
+        <ul class="list-group list-group-flush fs-5">
+          <li class="list-group-item border-0">
+            ✔ Personalized career insights
+          </li>
+          <li class="list-group-item border-0">
+            ✔ Easy-to-understand recommendations
+          </li>
+          <li class="list-group-item border-0">
+            ✔ Built using modern AI & machine learning
+          </li>
+          <li class="list-group-item border-0">
+            ✔ Completely free to use
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⭐ CTA SECTION -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Ready to Discover Your Perfect Career?</h2>
+    <p class="text-muted mb-4">Start your journey with a simple profile and get matched instantly.</p>
+    <a href="pathfinder.html" class="btn btn-primary btn-lg px-5 py-3">Start Now</a>
+  </div>
+</section>
+
+<!-- ⭐ FOOTER -->
+<footer class="py-4 bg-white border-top">
+  <div class="container text-center">
+    <small class="text-muted">
+      © <span id="year"></span> EduGuide — Developer Lokesh
+    </small>
+  </div>
+</footer>
+
+  <!-- ⭐ LOGIN / SIGNUP MODAL -->
+  <div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="authTitle">Login</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <!-- ⭐ GOOGLE LOGIN BUTTON INSIDE MODAL -->
+          <div class="text-center mb-3">
+
+            <div id="g_id_onload"
+                 data-client_id="582970056880-adu8ktcm5chepeja5i63kd598ers1o43.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleGoogleCallback"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-shape="rectangular"
+                 data-logo_alignment="left">
+            </div>
+
+            <div class="small text-muted mt-2">or use email</div>
+          </div>
+
+          <!-- ⭐ EMAIL FORM -->
+          <form id="authForm">
+            <input type="text" id="fullname" class="form-control mb-2"
+                   placeholder="Full Name (Sign up only)" style="display:none;">
+
+            <input type="email" id="email" class="form-control mb-2"
+                   placeholder="Email address" required>
+
+            <input type="password" id="password" class="form-control mb-2"
+                   placeholder="Password" required>
+
+            <button id="authSubmit" class="btn btn-primary w-100">Login</button>
+          </form>
+
+          <div class="text-center small text-muted mt-3">
+            <span id="authSwitchText">New user?</span>
+            <a href="#" id="authSwitch">Create account</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ⭐ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ⭐ FIX GOOGLE LOGIN INSIDE MODAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modalEl = document.getElementById("authModal");
+
+      modalEl.addEventListener("shown.bs.modal", () => {
+        modalEl.removeAttribute("aria-hidden");
+        const backdrop = document.querySelector(".modal-backdrop");
+        if (backdrop) backdrop.removeAttribute("aria-hidden");
+      });
+
+      // Fix: Remove lingering backdrop and restore body styles on close
+      modalEl.addEventListener("hidden.bs.modal", () => {
+        document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+        document.body.classList.remove("modal-open");
+        document.body.style.overflow = "";
+        document.body.style.paddingRight = "";
+      });
+    });
+  </script>
+
+  <!-- ⭐ Your Main JS -->
+  <script src="js/main.js"></script>
+<!-- TOAST CONTAINER -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+</body>
+</html>

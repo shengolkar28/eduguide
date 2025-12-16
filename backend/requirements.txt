@@ -1,0 +1,13 @@
+flask
+flask-cors
+pymongo
+python-dotenv
+pyjwt
+xgboost
+scikit-learn
+joblib
+gunicorn
+pandas
+requests
+bcrypt
+werkzeug
