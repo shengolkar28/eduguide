@@ -176,5 +176,3 @@ docker run --name eduguide-mongo -p 27017:27017 -d mongo:6
 If you'd like, I can:
 - push this README to the repository for you, or
 - also add a short `CONTRIBUTING.md` and a minimal `Procfile` for deploying to Render/Heroku.
-
-Tell me which next step you'd like.
