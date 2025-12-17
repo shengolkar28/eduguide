@@ -28,7 +28,7 @@ function showToast(message, type = "info") {
 function handleGoogleCallback(response) {
     const credential = response.credential;
 
-    fetch("http://localhost:5000/api/google-login", {
+    fetch("https://eduguide-tdl3.onrender.com/api/google-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ credential })
@@ -269,7 +269,7 @@ highlightActivePage();
             //---------------------------------------
             // EMAIL SIGNUP
             //---------------------------------------
-            fetch("http://localhost:5000/api/register", {
+            fetch("https://eduguide-tdl3.onrender.com/api/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ fullname, email, password })
@@ -290,7 +290,7 @@ highlightActivePage();
             //---------------------------------------
             // EMAIL LOGIN
             //---------------------------------------
-            fetch("http://localhost:5000/api/login", {
+            fetch("https://eduguide-tdl3.onrender.com/api/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })

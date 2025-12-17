@@ -1216,7 +1216,7 @@ if (weaknessSearchInput) {
     const token = localStorage.getItem("token");
     if (!token) return alert("Not logged in");
 
-    const res = await fetch("http://localhost:5000/api/save-section", {
+    const res = await fetch("https://eduguide-tdl3.onrender.com/api/save-section", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
