@@ -564,5 +564,10 @@ def debug_roadmaps():
         "careers": docs
     }), 200
 
+
+@app.route("/")
+def health():
+    return {"status": "EduGuide backend is running"}
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
