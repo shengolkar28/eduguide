@@ -147,7 +147,7 @@ function renderSelectedSkills() {
   }
 
   // ---------- config ----------
-  const API_BASE = "http://127.0.0.1:5000"; // use explicit IP to avoid CORS host mismatch
+  const API_BASE = "https://eduguide-tdl3.onrender.com"; // production API base
   const MAX_SKILLS = 50;
   const MAX_INTERESTS = 50;
   const DEBOUNCE_MS = 250;

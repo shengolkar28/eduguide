@@ -1,6 +1,6 @@
 // pathfinder.js
 
-const API_BASE = "http://127.0.0.1:5000"; // Flask backend
+const API_BASE = "https://eduguide-tdl3.onrender.com"; // production API base
 let userProfile = null;
 
 // Convert a string to Title Case (each word capitalized)
