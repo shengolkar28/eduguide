@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 import json
@@ -6,7 +7,8 @@ import json
 # CONFIG
 # -------------------------------------------
 
-DATA_PATH = r"C:\Users\ASUS\Documents\career_project_2\career project\ml_data\final_dataset.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "ml_data", "final_dataset.csv")
 
 LIST_COLS = [
     "skills",
